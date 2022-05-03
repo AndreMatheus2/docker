@@ -14,6 +14,6 @@ public class PingController {
     @ResponseStatus(HttpStatus.OK)
     public void ping(){
         System.out.println("Tudo funcionando!");
-        System.out.println("Live reload não funciona!");
+        System.out.println("Live reload está funcionando também!");
     }
 }
