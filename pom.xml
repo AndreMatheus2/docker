@@ -11,6 +11,7 @@
 	<groupId>com.docker</groupId>
 	<artifactId>springapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>springapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -29,9 +30,20 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
+			<exclusions>
+			<exclusion>
+				<groupId>org.junit.vintage</groupId>
+				<artifactId>junit-vintage-engine</artifactId>
+			</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 
@@ -40,6 +52,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludeDevtools>false</excludeDevtools>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
